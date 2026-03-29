@@ -1,0 +1,148 @@
+*{
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+}
+body{
+    background:linear-gradient(saddlebrown,rgb(63, 29, 4),BLACK);
+    background-repeat: no-repeat; 
+    background-size: cover;  
+}
+header{
+    width: 100%;
+    height: 15%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    margin: 0%;
+    background:linear-gradient(BLACK,rgba(113, 59, 19, 0.5),rgba(169, 92, 59, 0.5));
+}
+.logo{
+    
+    width: 20%;
+    height: 100%;
+}
+.menu ul{
+    text-align: center;
+    list-style-type: none;
+    overflow: hidden;
+    padding: 0%;
+    border-radius: 25px;
+}
+.menu a{
+    text-align: center;
+    text-decoration: none;
+    padding: 15px;
+    color: rgb(252, 219, 204);
+    display: block;
+}
+.menu a:hover{
+    box-shadow: 1px 1px 20px rgb(246, 227, 192);
+    border-radius: 25px;
+    color: rgb(63, 29, 4);
+}
+.menu li{
+    float: left;
+    
+}  
+section{
+    display: flex;
+    justify-content: space-evenly;
+    margin: 1%;
+    align-items: center;
+    flex-wrap: wrap;
+    
+}
+.produit{
+    width: 28%;
+    margin: 1%;
+}
+.produit img{
+    width: 100%;
+    height: 285px;
+    border-radius: 25px;
+    box-shadow: 1px 1px 20px burlywood;
+    animation-name: images;
+    animation-duration: 5s;
+    animation-delay: 1s;
+}
+h2{
+    color: burlywood;
+    text-align: center;
+    box-shadow:1px 1px 20px burlywood;
+    border-radius: 25px;
+}
+article{
+    background-image: url('choooko.jpg');
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+    margin: 1%;
+}
+article p{
+    color: aliceblue;
+}
+.text{
+     overflow-y: auto;
+}
+.image{
+    width: 60%;
+    padding: 1%;
+}
+article images{
+    width: 100%;
+    height: 60%;
+}
+.choko{
+    margin: 1% 20%;
+
+}
+@keyframes images{
+    0%{transform:scale(0.5);}
+    100%{transform: scale(1);}
+}
+@media (max-width:580PX){
+    section{
+        flex-wrap:wrap;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        margin: 1%;
+    }
+    .produit{
+        width: 100%;
+    }
+    header{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+    article{
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+    .logo{
+        width: 50%;
+    }
+    .menu{
+        padding: 0;
+    }
+    .image{
+        width: 100%;
+    }
+    .text{
+        width: 100%;
+    }
+}
+@media(max-width:700PX) {
+    .produit{
+        width: 100%;
+    }
+    section{
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+}
