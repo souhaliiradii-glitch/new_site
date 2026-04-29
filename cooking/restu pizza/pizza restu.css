@@ -1,0 +1,259 @@
+body{
+    background-color: bisque;
+    margin: 0%;
+    padding: 0;
+}
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(73, 41, 2);
+    width: 100%;
+    height: 15%;
+    position: fixed;
+}
+.accueil h1{
+    color: black;
+    text-shadow:1px 1px 20px rgb(177, 130, 97);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.menu ul{
+    overflow: hidden;
+    list-style-type: none;
+    text-align: center;
+    float: left;
+    border-radius: 25PX;
+}
+.menu a{
+    padding: 15px;
+    margin: 15px;
+    text-align: center;
+    text-decoration: none;
+    color: moccasin;
+    display: block;
+}
+.menu a:hover{
+    background-color:rgb(74, 4, 4);
+    border-radius: 26px;
+    box-shadow: 1PX 1PX 20PX saddlebrown;
+}
+.menu li{
+    float: left;
+}
+.logo{
+    margin: 1%;
+    float: right;
+    width: 10%;
+    height: 90%;
+}
+.infurmation{
+    border: 2px solid saddlebrown;
+    background-image: url("photo-pizza.jpg");
+    padding: 20PX;
+    justify-content: space-between;
+    border-radius: 26px;
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+}
+.text{
+    color: white;
+    overflow-y: auto;
+    height: 100px;
+    
+}
+.image{
+    height:12%;
+    width:30%;
+    padding: 2%; 
+}
+.produit{
+    display: flex;
+    justify-content: space-evenly;  
+    flex-wrap: wrap;
+    align-items: center;
+    margin:10px 0;
+    border: 2px solid saddlebrown;
+}
+.m{
+   width: 22%;
+   
+}
+.m img{
+    width: 100%;
+    height: 300px;
+}
+.m img:hover{
+    box-shadow:1px 20px 40px saddlebrown ;
+    border:1px solid rgb(73, 41, 2);
+}
+.m h1{
+    font-size: 26PX;
+    color: sienna;
+    text-align: center;
+    text-shadow: 1PX 1PX 20PX rgb(12, 7, 4);
+    box-shadow: 1px 1px 20px black;
+}
+h1{
+    color: sienna;
+    text-align: center;
+    text-shadow: 1PX 1PX 20PX rgb(12, 7, 4);
+}
+footer{
+    justify-content: space-between;
+    display: flex;
+    border: 2px solid rgb(45, 42, 41);
+    padding: 15px;
+   background-color: rgb(136, 132, 132);
+}
+
+.footer-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  
+}
+.footer-right img {
+  height: 22px;
+  background: white;
+  padding: 4px 6px;
+  border-radius: 4px;
+}
+
+.contact {
+    padding: 60px 10%;
+}
+
+.contact-container {
+    display: flex;
+    gap: 50px;
+    align-items: flex-start;
+}
+
+.contact-info {
+    width: 40%;
+    margin-left: 1%;
+}
+
+.info-box {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.info-box i {
+    width: 45px;
+    height: 45px;
+    background: #60aee3;
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+    font-size: 18px;
+}
+
+.info-box h4 {
+    margin: 0;
+    font-size: 18px;
+}
+
+.info-box p {
+    margin: 5px 0 0;
+    color: #555;
+}
+.contact-form {
+    width: 60%;
+}
+.contact-form input,
+.contact-form textarea {
+    width: 90%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 15px;
+}
+
+.contact-form textarea {
+    height: 140px;
+    resize: none;
+}
+
+.contact-form button {
+    padding: 12px 30px;
+    background: saddlebrown;
+    border: none;
+    color: white;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.contact-form button:hover {
+    background: rgb(67, 32, 7);
+}
+
+@media (max-width:800px){
+ .m{
+    width: 30%;
+ }
+ .m img{
+    object-fit: cover;
+ }
+  
+    }
+@media (max-width:700px){
+    .m{
+      width: 45%;
+      font-size: 17px;
+    }
+ 
+    .m img{
+       object-fit: cover;
+    }
+    footer{
+        flex-wrap: wrap;
+    }
+    }
+
+@media (max-width:600px){
+   
+    header{
+        display: flex;
+        flex-wrap: wrap;
+        font-size: 9Px;
+        flex-direction:column;
+
+    }
+    .logo{
+        width: 50%;
+    }
+
+    .m img{
+        object-fit: cover;
+    }
+    .infurmation{
+        display: flex;
+        font-size: 10px;
+        flex-wrap: wrap;
+        flex-direction: column;
+       
+    }
+   .m{
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+        font-size: 17px;
+    }
+    .contact-container{
+        display: flex;
+        flex-wrap:wrap;
+
+    }
+
+    footer{
+        flex-wrap: wrap;
+    }
+}

@@ -1,0 +1,243 @@
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+}
+body{
+    background-color: rgb(159, 113, 98);
+}
+header{
+    position: fixed;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+    background-color: rgb(159, 113, 98);
+    width: 100%;
+    height: 10%;
+}
+
+.menu ul{
+    text-align: center;
+    list-style-type: none;
+    overflow: hidden;
+
+}
+.menu a{
+    text-align: center;
+    text-decoration: none;
+    color: antiquewhite;
+    background-color:rgb(159, 113, 98) ;
+    display: block;
+    padding: 15px ;
+    
+}
+.menu li{
+    float: left;
+}
+.menu a:hover{
+    box-shadow: 1Px 1px 30px white;
+    border-radius: 26px;
+}
+.information{
+    background-image: url('info.jpg');
+    display: flex;
+    justify-content: space-between;
+   
+}
+.information img{
+    height: 30%;
+    margin: 3%;
+}
+
+.information p{
+    overflow-y: auto;
+    color: #ddd;
+    align-self: center;
+}
+.produit{
+    display: flex;
+    margin: 1%;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-items: center;
+    
+}
+.h img{
+    height: 300px;
+    width: 100%;
+
+}
+.h h1{
+    text-align: center;
+    box-shadow: 1px 2px 30Px rgb(98, 68, 58) ;
+    color:rgb(98, 68, 58);
+}
+.h{
+    width: 30%;
+}
+footer{
+    justify-content: space-between;
+    display: flex;
+    border: 2px solid rgb(45, 42, 41);
+    padding: 15px;
+   background-color: rgb(136, 132, 132);
+}
+.footer-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  
+}
+.footer-right img {
+  height: 22px;
+  background: white;
+  padding: 4px 6px;
+  border-radius: 4px;
+}
+
+.contact {
+    padding: 60px 10%;
+}
+.contct{
+    margin:3%;
+    
+}
+
+.contact-container {
+    display: flex;
+    gap: 50px;
+    align-items: flex-start;
+}
+
+.contact-info {
+    width: 40%;
+    margin-left: 1%;
+}
+
+.info-box {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.info-box i {
+    width: 45px;
+    height: 45px;
+    background: #60aee3;
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+    font-size: 18px;
+}
+
+.info-box h4 {
+    margin: 0;
+    font-size: 18px;
+}
+
+.info-box p {
+    margin: 5px 0 0;
+    color: #555;
+}
+.contact-form {
+    width: 60%;
+}
+.contact-form input,
+.contact-form textarea {
+    width: 90%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 15px;
+}
+
+.contact-form textarea {
+    height: 140px;
+    resize: none;
+}
+
+.contact-form button {
+    padding: 12px 30px;
+    background: saddlebrown;
+    border: none;
+    color: white;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.contact-form button:hover {
+    background: rgb(67, 32, 7);
+}
+@media (max-width:600px) {
+    header{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction:column;
+        font-size: 10px;
+    }
+    .information{
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+    .information img{
+        width: 300PX;
+        display: flex;
+        justify-content: center;
+    }
+    .menu li{
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+   .produit{
+        flex-direction: column;
+        flex-wrap: wrap;
+        
+    }
+    .h{
+        width: 40%;
+        flex-direction: column;
+        flex-wrap: wrap;
+       
+    }
+    .h img{
+        width: 100%;
+    }
+    .contact-container{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+    .contact-container i {
+        margin-left: 1%;
+    }
+}
+@media (max-width:300PX) {
+    header{
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+    .produit{
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+    .h{
+        width: 100%;
+    }  
+    .contact-container{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+    .contact-container i {
+        margin-left: 1%;
+    }
+    footer{
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+}

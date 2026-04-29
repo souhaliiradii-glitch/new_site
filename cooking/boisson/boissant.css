@@ -1,0 +1,265 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    background: linear-gradient(to bottom right,plum,violet,indigo,rgb(136, 136, 225));
+}
+header{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    height: 10%;
+    background: linear-gradient(to bottom right,plum,violet,rgb(136, 136, 225));
+    position: fixed;
+}
+.menu ul{
+    text-align: center;
+    list-style-type: none;
+   
+    overflow: hidden;
+}
+.menu a{
+    text-align: center;
+    text-decoration: none;
+    padding:15px;
+    color: black;
+    display: block;
+}
+.menu li{
+    float: left;
+}
+.menu a:hover{
+    animation:cc 1S linear 1;
+}
+@keyframes cc {
+    0%{transform: scale(0.5);}
+    100%{transform: scale(1.3);}
+}
+.logo{
+    margin-left: 1%;
+}
+.information{
+    background-image: url("image.jpg");
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-size: cover;
+}
+.information img{
+    height: 30%;
+    margin: 1%;
+}
+.information p{
+    overflow-y: auto;
+}
+.produit{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.produit h1{
+    text-align:center;
+    font-family:monospace;
+    box-shadow:1px 1px 30px palevioletred;
+}
+.produit img:hover{
+    transform: scale(1.1);
+    transition:  2s;
+}
+.produit img{
+    height: 300PX;
+    width: 100%;
+
+}
+.b{
+    width: 30%;
+    
+}
+.hh{
+    display: flex;
+
+    
+}
+footer{
+    justify-content: space-between;
+    display: flex;
+    border: 2px solid rgb(45, 42, 41);
+    padding: 15px;
+   background-color: rgb(136, 132, 132);
+}
+.footer-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  
+}
+.footer-right img {
+  height: 22px;
+  background: white;
+  padding: 4px 6px;
+  border-radius: 4px;
+}
+
+.contact {
+    padding: 60px 10%;
+}
+.contct{
+    margin:3%;
+    
+}
+
+.contact-container {
+    display: flex;
+    gap: 50px;
+    align-items: flex-start;
+}
+
+.contact-info {
+    width: 40%;
+    margin-left: 1%;
+}
+
+.info-box {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.info-box i {
+    width: 45px;
+    height: 45px;
+    background: #60aee3;
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+    font-size: 18px;
+}
+
+.info-box h4 {
+    margin: 0;
+    font-size: 18px;
+}
+
+.info-box p {
+    margin: 5px 0 0;
+    color: #555;
+}
+.contact-form {
+    width: 60%;
+}
+.contact-form input,
+.contact-form textarea {
+    width: 90%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 15px;
+}
+
+.contact-form textarea {
+    height: 140px;
+    resize: none;
+}
+
+.contact-form button {
+    padding: 12px 30px;
+    background: saddlebrown;
+    border: none;
+    color: white;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.contact-form button:hover {
+    background: rgb(67, 32, 7);
+}
+.vv{
+    background-image: url("info.jpg");
+    width: 100vw;
+    background-size: 100% 100%;
+    height: 30rem;
+    box-shadow: 1px 1px 30px plum;
+}
+.vv:hover{
+    animation:box 10s linear infinite;
+
+
+}
+@keyframes box{
+    0%{background-image: url("avocado.jpg");}
+    25%{background-image: url("molon.jpg");}
+    50%{background-image: url("mngo.jpg");}
+    75%{background-image: url("moz.jpg");}
+    100%{background-image: url("strawberry.jpg");}
+}
+@media (max-width:600px) {
+    header{
+        align-items: center;
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
+    .information {
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+    .information img{
+         width: 50%;
+    }
+    
+    .b{
+        width: 45%;
+    }
+    footer{
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+    .contact-container{
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+    .contact-container i{
+        margin-left: 2%;
+    }
+    .vv{
+        width: 100%;
+        margin: 0%;
+    }
+}
+@media (max-width:300px) {
+     header{
+        align-items: center;
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
+    .information {
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+    .information img{
+         width: 50%;
+    }
+  
+    .b{
+        width: 100%;
+    }
+    footer{
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+    .contact-container{
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+       .contact-container i{
+        margin-left: 2%;
+    }
+}
