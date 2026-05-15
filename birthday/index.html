@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>EMMA_LIO</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+<div class="card">
+    <div class="cake-icon">🎂🎈</div>
+    <h1>✨ Happy Birthday ✨</h1>
+    <div class="name">Nissrin</div>
+    <div class="message">
+        🌸 Wishing you a day full of joy, laughter, and all your favorite things! 🌸<br>
+        May this year bring you endless happiness and success.
+    </div>
+    <div class="arabic">
+        🎉 كل عام وأنتِ بألف خير يا نسرين 🎉<br>
+        عيد ميلاد سعيد، عقبال مئة عام 💖
+    </div>
+    <div class="balloons">
+        <span class="balloon">🎈</span>
+        <span class="balloon">🎈</span>
+        <span class="balloon">🎉</span>
+        <span class="balloon">🎈</span>
+        <span class="balloon">🎈</span>
+    </div>
+    <button id="surpriseBtn">🎁 click here🎁</button>
+    <footer>❤️ Made with love for Nissrin ❤️</footer>
+</div>
+
+<canvas id="confetti-canvas"></canvas>
+
+<script>
+    (function() {
+        
+        const canvas = document.getElementById('confetti-canvas');
+        const ctx = canvas.getContext('2d');
+        let width = window.innerWidth;
+        let height = window.innerHeight;
+        let particles = [];
+        let animationId = null;
+        let active = false;
+
+        function resizeCanvas() {
+            width = window.innerWidth;
+            height = window.innerHeight;
+            canvas.width = width;
+            canvas.height = height;
+        }
+        window.addEventListener('resize', resizeCanvas);
+        resizeCanvas();
+
+        class ConfettiParticle {
+            constructor() {
+                this.x = Math.random() * width;
+                this.y = Math.random() * height - height;
+                this.size = Math.random() * 8 + 4;
+                this.speedY = Math.random() * 5 + 3;
+                this.speedX = (Math.random() - 0.5) * 3;
+                this.color = `hsl(${Math.random() * 360}, 80%, 60%)`;
+                this.rotation = Math.random() * 360;
+                this.rotateSpeed = (Math.random() - 0.5) * 10;
+            }
+            update() {
+                this.y += this.speedY;
+                this.x += this.speedX;
+                this.rotation += this.rotateSpeed;
+                if (this.y > height + 50 || this.x < -50 || this.x > width + 50) {
+                    this.y = -50;
+                    this.x = Math.random() * width;
+                }
+            }
+            draw() {
+                ctx.save();
+                ctx.translate(this.x, this.y);
+                ctx.rotate(this.rotation * Math.PI / 180);
+                ctx.fillStyle = this.color;
+                ctx.fillRect(-this.size/2, -this.size/2, this.size, this.size);
+                ctx.restore();
+            }
+        }
+
+        function startConfetti() {
+            if (active) return;
+            active = true;
+            particles = [];
+            for (let i = 0; i < 150; i++) {
+                particles.push(new ConfettiParticle());
+            }
+            function animate() {
+                if (!active) return;
+                ctx.clearRect(0, 0, width, height);
+                for (let p of particles) {
+                    p.update();
+                    p.draw();
+                }
+                animationId = requestAnimationFrame(animate);
+            }
+            animate();
+        }
+
+        function stopConfetti() {
+            if (animationId) {
+                cancelAnimationFrame(animationId);
+                animationId = null;
+            }
+            active = false;
+            ctx.clearRect(0, 0, width, height);
+        }
+
+
+        function burstConfetti(seconds = 2) {
+            startConfetti();
+            setTimeout(() => {
+                stopConfetti();
+            }, seconds * 1000);
+        }
+
+       
+        const btn = document.getElementById('surpriseBtn');
+        btn.addEventListener('click', () => {
+            burstConfetti(3);
+            const popMsg = document.createElement('div');
+            popMsg.innerText = '🎂🎉 Happy birthday Nissrin 🎉🎂';
+            popMsg.style.position = 'fixed';
+            popMsg.style.bottom = '30%';
+            popMsg.style.left = '50%';
+            popMsg.style.transform = 'translateX(-50%)';
+            popMsg.style.backgroundColor = '#fffbeb';
+            popMsg.style.color = '#b91c1c';
+            popMsg.style.padding = '15px 30px';
+            popMsg.style.borderRadius = '60px';
+            popMsg.style.fontSize = '1.8rem';
+            popMsg.style.fontWeight = 'bold';
+            popMsg.style.boxShadow = '0 10px 25px rgba(0,0,0,0.2)';
+            popMsg.style.zIndex = '2000';
+            popMsg.style.border = '3px solid gold';
+            popMsg.style.fontFamily = 'inherit';
+            popMsg.style.textAlign = 'center';
+            document.body.appendChild(popMsg);
+            setTimeout(() => {
+                popMsg.remove();
+            }, 2000);
+        });
+
+        setTimeout(() => {
+            startConfetti();
+            setTimeout(() => {
+                stopConfetti();
+            }, 1500);
+        }, 500);
+    })();
+</script>
+</body>
+</html>
